@@ -1,0 +1,15 @@
+<h1>Course: <%= @course.name %></h1>
+
+<p>
+  <strong>Name: </strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Recipes: </strong>
+  <% @recipes.each do |recipe| %>
+      <p><%= recipe.name %></p>
+  <% end %>
+</p>
+
+<%= link_to 'Back', courses_path %>

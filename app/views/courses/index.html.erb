@@ -1,0 +1,23 @@
+<h2>List of Courses</h2>
+<table class="table-fill">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= link_to "Show", course %></td>
+      <td><%= link_to "Edit", edit_course_path(course) %></td>
+      <td><%= link_to "Remove", course, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to "Create new course", new_course_path %> <br>
+<%= link_to "Back", root_path %>
