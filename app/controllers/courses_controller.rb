@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+before_action :is_authenticated
+
   def index
     @courses = Course.all
     render 'index'

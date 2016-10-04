@@ -1,0 +1,22 @@
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="1">Email</th>
+      <!-- <th>Admin</th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Register User', signup_path %>

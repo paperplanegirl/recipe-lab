@@ -1,4 +1,6 @@
 class IngredientsController < ApplicationController
+  before_action :is_authenticated
+
   def index
     @ingredients = Ingredient.all
     render 'index'

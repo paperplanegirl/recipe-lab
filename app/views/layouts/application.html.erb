@@ -6,9 +6,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+    <%= link_to "Log Out", '/logout', method: :delete %>
+    <% if @current_user %>
+      Logged In
+    <% else %>
+      Guest
+    <% end %>
+    <%= yield %>
   </head>
 
   <body>
-    <%= yield %>
+    <h1>Welcome!</h1>
+    <%= link_to "View/Edit Courses", courses_path %><br>
+    <%= link_to "View/Edit Recipes", recipes_path %><br>
   </body>
 </html>
